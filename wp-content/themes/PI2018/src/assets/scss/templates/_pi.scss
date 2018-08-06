@@ -32,10 +32,23 @@ display: none; }
         @include xy-grid;
 
         .evidenza-main{
+          .categoria-sm {
+            position: relative;
+            float: left;
+            color: #fff;
+            background-color: #da071f;
+            margin-left: 1rem;
+            padding: 2px 3px;
+            font-size: 1rem;
+            margin-top: -95%;
+            text-transform: uppercase;
+          }
             @include breakpoint(small) {
+
                 @include xy-cell(12);
             }
             @include breakpoint(medium) {
+              .categoria-sm { display: none; }
                 @include xy-cell(6);
             }
             @include breakpoint(large) {
@@ -51,16 +64,28 @@ display: none; }
               width: 100%;
               overflow: hidden;
               img { width: 100%; float: left; }
+
               .testi {
                 float: left; clear: left;
-                margin-top: -40%;
                 text-align: center;
+
+                padding-bottom: 17px;
+
+                @include breakpoint(medium) {
+                  margin-top: -40%;
+                  padding-bottom: 0;
+
+                }
                 @include breakpoint(large) {
                   text-align: left;
                   margin-top: -30%;
                 }
 
                 .categoria {
+                  display:none;
+                  @include breakpoint(medium) {
+                    display: inline;
+                  }
                   color: #fff;
                   background-color: #da071f;
                   margin-left: 1rem;
@@ -72,22 +97,26 @@ display: none; }
 
                 h4 {
                   box-sizing: content-box;
-                  margin: 1rem;
+                  margin: 0.5rem;
+
                   padding: 0;
-                  max-width: 500px;
+                  @include breakpoint(medium) {
+                    max-width: 500px;
+                      margin: 1rem;
+                  }
+                  font-family: 'Chronicle Text G1 Bold';
 
                   span {
                     color: #fff;
                     background-color: #000;
                     text-transform: none;
-                    font-weight: bold;
                     box-decoration-break: clone;
-                    line-height: 2.5rem;
+                    line-height: 2.1rem;
                     padding: 2px 3px;
                     font-size: 1.5rem;
 
                     @include breakpoint(large) {
-                      line-height: 3rem;
+                      line-height: 2.9rem;
                       padding: 3px 5px;
                       font-size: 2rem;
                     }
@@ -108,6 +137,17 @@ display: none; }
         }
 
         .evidenza-side{
+          .categoria-sm {
+            position: relative;
+            float: left;
+            color: #fff;
+            background-color: #da071f;
+            margin-left: 1rem;
+            padding: 2px 3px;
+            font-size: 1rem;
+            margin-top: -95%;
+            text-transform: uppercase;
+          }
             @include breakpoint(small) {
                 @include xy-cell(12);
             }
@@ -116,25 +156,47 @@ display: none; }
             }
             @include breakpoint(large) {
                 @include xy-cell(4);
+                img{
+                    height: 100%;
+                }
             }
             margin: .5% auto;
-            img{
-                height: 100%;
-            }
+
             .item {
               width: 100%; height: 100%;
               overflow: hidden;
               img { width: 100%; float: left; }
+
               .testi {
+                padding-bottom: 17px;
+
+                @include breakpoint(medium) {
+                  margin-top: -40%;
+                  padding-bottom: 0;
+
+                }
+                @include breakpoint(large) {
+                  text-align: left;
+                  margin-top: -30%;
+                }
                 float: left; clear: left;
-                margin-top: -70%;
+                margin-top: 0;
+                text-align: center;
+                @include breakpoint(large) {
+                  text-align: left;
+                  margin-top: -65%;
+                }
+
                 .categoria {
+                  display:none;
+                  @include breakpoint(medium) {
+                    display: inline;
+                  }
                   color: #fff;
                   background-color: #da071f;
                   margin-left: 1rem;
                   padding: 2px 3px;
                   font-size: 1rem;
-                  //box-shadow: 1px 1px 2px #333;
                   text-transform: uppercase;
                 }
 
@@ -143,19 +205,19 @@ display: none; }
                   margin: 1rem;
                   max-width: 500px;
                   padding: 0;
+                  font-family: 'Chronicle Text G1 Bold';
 
                   span {
                     color: #fff;
                     background-color: #000;
                     text-transform: none;
-                    font-weight: bold;
                     box-decoration-break: clone;
-                    line-height: 2.5rem;
+                    line-height: 2.1rem;
                     padding: 2px 3px;
-                    font-size: 1.5em;
+                    font-size: 1.5rem;
 
                     @include breakpoint(large) {
-                      line-height: 3rem;
+                      line-height: 2.9rem;
                       padding: 3px 5px;
                       font-size: 2rem;
                     }
@@ -209,6 +271,10 @@ display: none; }
               margin-top: 7px;
               float: left;
               width: 100%;
+              text-align: center;
+              @include breakpoint(medium) {
+                text-align: left;
+              }
               h4,h5 {
                   color: #000;
                   line-height: 1.3rem;
@@ -385,14 +451,15 @@ section#h-promo {
   margin: 24px auto !important;
   padding: 0 !important;
 
-
-
   #middle {
 
     @include xy-grid;
     #agenda-mobile {
       @include hide-for(large);
       @include xy-cell(12);
+      @include breakpoint(medium) {
+        @include xy-cell(8);
+      }
       margin-bottom: 50px;
       h4 { font-family:  'Chronicle Text G1 Bold';
         width: 100%; border-bottom: 2px solid;}
@@ -439,6 +506,12 @@ section#h-promo {
 
     }
 
+    #banner-medium {
+      @include show-for(medium);
+      @include hide-for(large);
+      @include xy-cell(4);
+    }
+
     #latest {
       @include xy-cell(12);
       @include breakpoint(large) {
@@ -455,6 +528,7 @@ section#h-promo {
 
       .news-sm {
         img { display: none; }
+        margin-bottom: 17px;
         .categoria { display: none; }
         &:first-child() { .testi { border: 0; } }
         .testi {
@@ -779,7 +853,8 @@ section#h-promo {
   @include xy-grid-container();
   @include xy-grid;
   h4 { float: left; width: 100%; padding-bottom: 7px;
-    border-bottom: 3px solid #000; text-indent: 0; }
+    border-bottom: 3px solid #000; text-indent: 0;
+    padding-left: 0; }
   @include breakpoint(large) {
     h4 { text-indent: 0.9375rem; }
   }
@@ -1093,16 +1168,15 @@ section#h-promo {
           clear: left;
           position: relative;
           z-index: 3;
-          width: 87%;
+          width: 93%;
           margin: -37% 0 0 2%;
 
           span {
             font-family: 'Chronicle Text G1 Bold';
-            text-transform: none;
-            line-height: 2.5rem;
+            line-height: 2.6rem;
             color: #fff;
             width: 93%;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             background-color: #000;
             padding: 3px 7px;
             box-decoration-break: clone;

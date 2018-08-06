@@ -1,7 +1,7 @@
 .footer {
   min-height: 222px;
   margin-top: 30px;
-  background-color: #d00a32;
+  background-color: #da071f;
 }
 
 
@@ -31,11 +31,13 @@
     color: #fff;
     b { margin: 7px 0;
         float: left;}
-    li,p { color: #fff; }
+    li,p { color: #fff; font-size: 15px; }
+
     .socials {
       clear: left; float: left;
       margin-top: 4px;
-      a { float: left; margin: 4px 4px 0 0; }
+
+      a { float: left; margin: 4px 4px 0 0;}
     }
     a { float: left; margin: 4px 4px 0 0;
         color: #fff; text-decoration: none;
@@ -53,12 +55,22 @@
     @include menu-direction(horizontal);
     @include menu-align(left);
     margin: 0;
-    li a { padding: 0.3rem !important;  }
+    li a { padding: 0 0.3rem 0.3rem 0!important; font-size: 14px;}
+    li+li a:before {
+      content : "-  ";
+    }
+    /*li a:last-child():after {
+      content : "";
+    }*/
     float: left;
     clear: left;
     @include breakpoint(medium) {
+
+      li+li a:before {
+        content : "";
+      }
       @include menu-direction(vertical);
-      li a { padding: 0.3rem 0 !important; }
+      li a { padding: 0.3rem 0 !important; font-size: 17px; }
     }
   }
 }

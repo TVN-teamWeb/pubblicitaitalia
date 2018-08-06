@@ -38,8 +38,9 @@ get_header(); ?>
 						<div class="item" >
 							<!--img src="<?php echo the_post_thumbnail_url('evidenza'); ?>" alt=""-->
 							<img data-interchange="[<?php echo the_post_thumbnail_url('blk-thumb'); ?>, small],  [<?php echo the_post_thumbnail_url('evidenza'); ?>, large]">
+							<span class="categoria-sm"><?php getCategories(); ?></span>
 							<div class="testi">
-								<span class="categoria">MEDIA</span>
+								<span class="categoria"><?php getCategories(); ?></span>
 								<h4><span><?php the_title(); ?><span></h4>
 								<?php if(trim($autore)!="") : ?>
 									<small class="autore"><span style="color: #bd0c28;">DI</span> <?php echo $autore ?>
@@ -80,8 +81,9 @@ get_header(); ?>
 						<div class="item" >
 							<!--img src="<?php echo the_post_thumbnail_url('evidenza-side'); ?>" alt=""-->
 							<img data-interchange="[<?php echo the_post_thumbnail_url('blk-thumb'); ?>, small],  [<?php echo the_post_thumbnail_url('evidenza-side'); ?>, large]">
+							<span class="categoria-sm"><?php getCategories(); ?></span>
 							<div class="testi">
-								<span class="categoria">MEDIA</span>
+								<span class="categoria"><?php getCategories(); ?></span>
 								<h4><span><?php the_title(); ?><span></h4>
 
 								<?php if(trim($autore)!="") : ?>
@@ -188,6 +190,10 @@ get_header(); ?>
 					<p></p>
 				</div>
 				</div>
+			</div>
+
+			<div id="banner-medium">
+				
 			</div>
 
 			<div id="latest">
