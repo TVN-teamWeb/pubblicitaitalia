@@ -10,11 +10,15 @@ get_header(); ?>
 	<main>
 		<div id="foreground">
 			<div id="interna">
-				<div id="articoli">
-					<?php while ( have_posts() ) : the_post(); ?>
+				<div id="articoli" class="category-posts">
+					<?php
+
+						$categoria  = get_category( get_query_var( 'cat' ) );
+						while ( have_posts() ) : the_post(); ?>
 
 
 						<?php
+
 
 								$sottotitolo= get_field('sottotitolo');
 								$autore = get_field('autore');
@@ -52,7 +56,7 @@ get_header(); ?>
 					<?php
 				endif;
 				endwhile;
-					echo do_shortcode('[ajax_load_more container_type="div" post_type="post"]');
+					echo do_shortcode('[ajax_load_more container_type="div" post_type="post" offset="5" posts_per_page="5" category="'.$categoria->slug.'"]');
 					?>
 
 			</div>

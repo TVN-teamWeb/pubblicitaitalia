@@ -79,9 +79,7 @@ $(window).scroll(function() {
 });
 
 $(".cerca").click( function() {
-  //$(".desktop-menu").css("display", "none");
-  //$(".srctxt").css("display", "block");
-  //$(".srctxt").focus();
+  $(".search-box").toggleClass("active");
 });
 
 $(document).keyup(function(e){

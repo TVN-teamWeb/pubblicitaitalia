@@ -1,24 +1,7 @@
-<?php
-/**
- * The template for displaying all single posts and attachments
- *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
- */
 
-get_header(); ?>
-	<main>
-		<div id="foreground">
-			<div id="interna">
-				<div id="articoli" class="category-posts">
-					<?php
-
-						$categoria  = get_category( get_query_var( 'cat' ) );
-						while ( have_posts() ) : the_post(); ?>
 
 
 						<?php
-
 
 								$sottotitolo= get_field('sottotitolo');
 								$autore = get_field('autore');
@@ -55,29 +38,4 @@ get_header(); ?>
 
 					<?php
 				endif;
-				endwhile;
-
 					?>
-
-			</div>
-			<div id="main-sb">
-				<!-- AGENDA -->
-
-			<div class="banner">
-				<img src="http://via.placeholder.com/300x250/ababcf/fff/?text=BANNER+ADV&background=000" />
-			</div>
-
-
-
-
-
-		</div>
-	</div>
-
-
-		</div>
-	</main>
-
-
-
-<?php get_footer();

@@ -93,7 +93,8 @@
 							<i class="fas fa-search"></i>
 
 						</span>
-						<input class="srctxt" type="text" placeholder="Cerca articolo" />
+
+
 						<?php foundationpress_top_bar_r(); ?>
 						<?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) === 'topbar' ) : ?>
 							<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
@@ -106,5 +107,17 @@
 
 
 	</header>
+
+	<div class="search-box">
+		<form method="GET" action="/" >
+			<div class="input-group">
+				<input class="srctxt input-group-field" type="text" name="s" placeholder="Cerca articolo" />
+  			<div class="input-group-button">
+    			<input type="submit" class="button hollow secondary" value="CERCA">
+  			</div>
+			</div>
+		</form>
+	</div>
+
 	</div>
 	</div>
