@@ -1,5 +1,5 @@
 <?php
-  $post_id = 104669;
+  $post_id = 104973;
   $post_thumbnail_id = get_post_thumbnail_id( $post_id );
   $image = wp_get_attachment_image_src( $post_thumbnail_id , 'copertina');
 
