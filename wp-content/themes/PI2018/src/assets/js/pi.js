@@ -95,15 +95,23 @@ $(document).on('sticky.zf.stuckto:top', function(){
   $(".logobox").addClass('stucked');
   $(".top-menu-bar").addClass('stucked');
   $(".site-header").addClass('stucked');
+  $(".search-box").addClass('stucked');
 }).on('sticky.zf.unstuckfrom:top', function(){
   $(".logobox").removeClass('stucked');
   $(".leaderboard").removeClass('stucked');
   $(".top-menu-bar").removeClass('stucked');
   $(".site-header").removeClass('stucked');
+  $(".search-box").removeClass('stucked');
 });
 
 
 $(document).ready(function () {
+
+  /* posizione destra box ricerca*/
+  var L = parseInt($(".cerca").offset().left);
+  var R = L - 350;
+  $(".search-box").css("left", R+"px");
+
   if($("#agenda").length > 0) {
     $("#agenda").MEC({calendar_link: "#", events: EVENTI});
     /* posizionamento banner verticale */
@@ -133,4 +141,6 @@ $(".arretrati .item").click( function() {
   $(".cover .numero").html($(this).find(".numero").html());
   $(this).find("img").attr("src", coverIMG);
   $(this).find(".numero").html(coverNR);
+  var T = parseInt($(".cover").offset().top);
+  $(window).scrollTop(T-100);
 });

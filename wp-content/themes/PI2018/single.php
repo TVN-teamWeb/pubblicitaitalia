@@ -76,7 +76,7 @@ get_header(); ?>
 
 		$query = getRelated($post, 6);
 
-		if ( $query->have_posts() ) :
+		if ( is_object($query) && $query->have_posts() ) :
 	?>
 		<section id="related">
 			<h4><b>POTREBBERO INTERESSARTI ANCHE</b></h4>

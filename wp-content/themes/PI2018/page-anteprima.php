@@ -14,10 +14,7 @@ get_header(); ?>
 		</div>
 		<div class="intro-anteprima">
 			<div class="pay-off">
-				<img src="/wp-content/themes/PI2018/dist/assets/images/ILTODAY.png" />
-				<span class="titoloB">che arriva</span>
-				<img src="/wp-content/themes/PI2018/dist/assets/images/PRIMA.png" />
-
+				<img src="/wp-content/themes/PI2018/dist/assets/images/introNewsletter.png" />
 			</div>
 			<span class="testo">
 				Anteprima Today è la nuova newsletter quotidiana di Today Pubblicità Italia.
@@ -37,21 +34,21 @@ get_header(); ?>
 				e ricevere l'<b><i>Anteprima Today</i>&#160;!</b>
 			</p>
 			<br/>
-			<form class="" action="" method="post">
+			<form action="/?na=s" method="post">
 
 			      <div class="form-field">
 			        <label>Nome
-			          <input type="text">
+			          <input type="text" name="nn">
 			        </label>
 			      </div>
-						<div class="form-field">
+						<div class="form-field" >
 			        <label>Cognome
-			          <input type="text">
+			          <input type="text" name="ns">
 			        </label>
 			      </div>
-			      <div class="form-field">
+			      <div class="form-field" >
 			        <label>E-mail
-			          <input type="text" >
+			          <input type="text" name="ne" required>
 			        </label>
 			      </div>
 						<div class="btn-field">

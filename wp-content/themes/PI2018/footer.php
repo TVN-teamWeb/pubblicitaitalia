@@ -73,7 +73,7 @@
         </div>
         <div class="footer-grid">
           <section>
-            <img src="/wp-content/uploads/2018/07/TodayLogo-02.png" width="169">
+            <img src="/wp-content/themes/PI2018/dist/assets/images/TodayLogo.png" width="169">
           </section>
           <section>
             <p>
@@ -92,6 +92,8 @@
               <br>
               Tutti i diritti riservati.
             </p>
+            <br>
+            <a href="/privacy">Privacy e cookie policy</a>
           </section>
         </div>
     </div>

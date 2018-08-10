@@ -12,17 +12,19 @@
 
 get_header(); ?>
 
-<?php get_template_part( 'template-parts/featured-image' ); ?>
-<div class="main-container">
-	<div class="main-grid">
-		<main class="main-content">
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'template-parts/content', 'page' ); ?>
-				<?php comments_template(); ?>
-			<?php endwhile; ?>
-		</main>
-		<?php get_sidebar(); ?>
+<main>
+	<div id="foreground">
+		<div id="interna">
+			<div class="articolo">
+
+				<h1><?php the_post(); the_title(); ?></h1><br><br><br>
+
+				<div class="contenuto">
+					<?php the_content(); ?>
+				</div>
+
+			</div>
 	</div>
-</div>
+</main>
 <?php
 get_footer();

@@ -16,6 +16,7 @@ get_header(); ?>
 			<div class="pay-off">
 
 				<img src="/wp-content/themes/PI2018/dist/assets/images/GrandPrix.png" />
+
 			</div>
 			<span class="testo">
 
@@ -32,7 +33,8 @@ get_header(); ?>
 		</div>
 
 		<div class="GPbox even">
-			<img src="/wp-content/themes/PI2018/dist/assets/images/GPADV.png" />
+			<!--img src="/wp-content/themes/PI2018/dist/assets/images/GPADV.png" /-->
+			<img data-interchange="[/wp-content/themes/PI2018/dist/assets/images/GPADV-lg.jpg, small],[/wp-content/themes/PI2018/dist/assets/images/GPADV.png, large]" />
 			<span class="info">
 				<h2>International GrandPrix <br>Advertising Strategies </h2>
 				<svg xmlns="http://www.w3.org/2000/svg" width="100" height="60">
@@ -59,12 +61,12 @@ get_header(); ?>
 
 		<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="180" id="graphB1B2">
 			<polyline points="200,0 200,90" stroke="black" stroke-width="1.7" fill="none"/>
-			<polyline points="0,90 1200,90" stroke="black" stroke-width="1.7" fill="none" />
+			<polyline points="0,90 1200,90" stroke="black" stroke-widthmedium="1.7" fill="none" />
 			<polyline points="1111,90 1111,180" stroke="black" stroke-width="1.7" fill="none"/>
 		</svg>
 
 		<div class="GPbox odd">
-			<img src="/wp-content/themes/PI2018/dist/assets/images/GPREL.png" />
+			<img data-interchange="[/wp-content/themes/PI2018/dist/assets/images/GPREL-lg.png, small],[/wp-content/themes/PI2018/dist/assets/images/GPREL.png, large]" />
 			<img src="/wp-content/themes/PI2018/dist/assets/images/iscrizioniAperte.png" class="open" />
 			<span class="info">
 				<h2>International GrandPrix <br>Relational Strategies </h2>
@@ -97,7 +99,7 @@ get_header(); ?>
 		</svg>
 
 		<div class="GPbox even">
-			<img src="/wp-content/themes/PI2018/dist/assets/images/GPBRAND.png" />
+			<img data-interchange="[/wp-content/themes/PI2018/dist/assets/images/GPBRAND-lg.png, small],[/wp-content/themes/PI2018/dist/assets/images/GPBRAND.png, large]" />
 			<img src="/wp-content/themes/PI2018/dist/assets/images/iscrizioniAperte.png" class="open">
 			<span class="info">
 				<h2>Brand Identity <br>GrandPrix </h2>
@@ -134,7 +136,9 @@ get_header(); ?>
 </main>
 
 <script type="text/javascript">
-	$(document).ready(function () {
+
+	function GP() {
+		/* disegno grafica SVG */
 		var W = parseInt($(".graph").css("width"));
 		var H = parseInt($(".graph").css("height"));
 		var points = W+",80 0,80 0,"+H;
@@ -150,13 +154,23 @@ get_header(); ?>
 		points = "0,90 "+W+",90";
 		$("#graphB1B2 polyline").eq(1).attr("points", points);
 		$("#graphB2B3 polyline").eq(1).attr("points", points);
-	  points=(W-XD)+",90 "+(W-XD)+",180";
+		points=(W-XD)+",90 "+(W-XD)+",180";
 		$("#graphB1B2 polyline").eq(2).attr("points", points);
 		points=(W-XD)+",0 "+(W-XD)+",90";
 		$("#graphB2B3 polyline").eq(2).attr("points", points);
 
+		/* posizionamento banner iscrizioni */
+		$(".open").each( function() {
+			var os = $(this).parent().find("img").eq(0).offset();
+			console.log(os);
+			$(this).css("top", parseInt(os.top)+10);
+			$(this).css("left", parseInt(os.left)+10);
+		});
+	}
 
-	});
+	$(document).ready(function () { GP(); });
+	$(window).resize(function () { GP(); });
+
 </script>
 
 <?php get_footer();

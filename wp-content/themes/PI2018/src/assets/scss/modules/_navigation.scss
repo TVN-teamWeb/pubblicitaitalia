@@ -251,7 +251,7 @@ nav { max-width: $global-width; margin: auto; margin-top: -26px; }
 
 .site-navigation {
   @include breakpoint(small only) {
-    padding: 0; // prevents container visibility on small screens
+    padding: 0; // prevents url_videocontainer visibility on small screens
   }
 }
 
@@ -266,4 +266,32 @@ nav { max-width: $global-width; margin: auto; margin-top: -26px; }
 
 .nav-next {
   float:right;
+}
+
+.search-box  {
+  @include show-for(large);
+  position: absolute;
+  left: 800px;
+  top: 44px;
+  &.stucked { top: 27px; }
+
+  z-index: -1;
+
+  width: 400px;
+  border: 1px solid #555;
+  transition: top 0.3s linear;
+  .input-group { margin-bottom: 0; }
+  .srctxt, .srctxt:focus  {
+    color: #000;
+    border: 0;
+  }
+
+  .input-group-button {
+    padding: 2px 3px;
+  }
+
+  &.active {
+    top: 100px;
+    &.stucked { top: 77px; }
+  }
 }
